@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit UsuarioDispositivo{% endblock %}
+
+{% block body %}
+    <h1>Edit UsuarioDispositivo</h1>
+
+    {{ include('usuario_dispositivo/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('usuario_dispositivo_index') }}">back to list</a>
+
+    {{ include('usuario_dispositivo/_delete_form.html.twig') }}
+{% endblock %}

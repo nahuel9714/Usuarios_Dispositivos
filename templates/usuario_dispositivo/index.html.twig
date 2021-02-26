@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuarios-Dispositivos{% endblock %}
+
+{% block body %}
+    <h1>Usuarios-Dispositivos</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Dispositivo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario_dispositivo in usuario_dispositivos %}
+            <tr>
+                <td>{{ usuario_dispositivo.idUsuario }}</td>
+                <td>{{ usuario_dispositivo.idDispositivo }}</td>
+                <td>
+                    <a href="{{ path('usuario_dispositivo_show', {'id': usuario_dispositivo.idUsuario}) }}">show</a>
+                    <a href="{{ path('usuario_dispositivo_edit', {'id': usuario_dispositivo.idUsuario}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('usuario_dispositivo_new') }}">Create new</a>
+{% endblock %}
